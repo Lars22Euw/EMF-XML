@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Xm:XML_Model
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:Xm="http://www.example.org/Xm"
+    xsi:schemaLocation="http://www.example.org/Xm Xm.ecore">
+  <version version="1.0"
+      encoding="UTF-8"/>
+  <node xsi:type="Xm:Root"
+      attribut="//@node/@children.0"
+      endTag="&lt;/osm>"
+      startTag="&lt;osm>">
+    <children
+        xsi:type="Xm:Attribute"
+        Name="version"
+        value="0.6"/>
+    <children
+        xsi:type="Xm:Attribute"
+        Name="generatos"
+        value="&quot;CGImap 0.8.6 (1548621 spike-06.openstreetmap.org)&quot;"/>
+    <children
+        xsi:type="Xm:Element"
+        Name="Node"
+        attribut="//@node/@children.2/@children.0"
+        endTag="&lt;/node>"
+        startTag="&lt;node>">
+      <children
+          xsi:type="Xm:Attribute"
+          Name="ID"
+          value="499341"/>
+      <children
+          xsi:type="Xm:Element"
+          Name="Tag"
+          endTag="&lt;/Tag>"
+          startTag="&lt;Tag>">
+        <children
+            xsi:type="Xm:Attribute"
+            Name="k"
+            value="crossing:island"/>
+      </children>
+    </children>
+  </node>
+</Xm:XML_Model>

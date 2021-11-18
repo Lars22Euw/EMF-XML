@@ -2,7 +2,8 @@
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="Xm" nsURI="http://www.example.org/Xm" nsPrefix="Xm">
   <eClassifiers xsi:type="ecore:EClass" name="XML_Model">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="version" eType="#//Version"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="version" eType="#//Version"
+        containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="node" eType="#//Node" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Element" eSuperTypes="#//Node">
@@ -20,7 +21,10 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Comment" eSuperTypes="#//Node"/>
   <eClassifiers xsi:type="ecore:EClass" name="CDataSection" eSuperTypes="#//Text"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Version"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Version">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="version" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="encoding" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Node">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="parent" eType="#//Element"
