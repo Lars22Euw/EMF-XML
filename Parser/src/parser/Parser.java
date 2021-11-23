@@ -23,62 +23,47 @@ public class Parser {
 	
 	public static void main(String[] args) {
 				
-        InputStream is; /* some input file */
         SAXBuilder saxBuilder = new SAXBuilder();
         
-        var file = new File("test.txt");
+        var file = new File("map.osm");
 		final Document document = saxBuilder.build(file);
-        
-        Document parsedFile = null;
 
-        try {
+        /*try {
         parsedFile = saxBuilder.build(is);
 
         } catch (JDOMException | IOException e) {
         throw new IOException(e.getMessage(), e.getCause());
-        }
+        }*/
         
         final Element rootElement = document.getRootElement();
         
 		ResourceSet rs = new ResourceSetImpl();
-
 		Resource r = rs.createResource(URI.createFileURI("misc/model.xmi"));
 
 
 		// ---- parse xml
 		
 		var children = rootElement.getChildren();
-		
+		for (var child : children) {
+			if (child.getClass().equals(r)) {
+				
+			}
+		}
 
-		Container c = TrianglesFactory.eINSTANCE.createContainer();
-
-		Container c1 = TrianglesFactory.eINSTANCE.createContainer();
-
-		            
-
+		Container c = XMLFactory.eINSTANCE.createContainer();
 		r.getContents().add(c);
 
-		r.getContents().add(c1);
-
 		            
-
-		A_Class a = TrianglesFactory.eINSTANCE.createA_Class();
-
-		c.getA().add(a);
-
-		c1.getA().add(a);
+		Element e = XMLFactory.eINSTANCE.createElement();
+		c.getE().add(e);
 
 		            
 
 		try {
-
 		r.save(null);
-
-		} catch (IOException e) {
-
+		} catch (IOException er) {
 		       // TODO Auto-generated catch block
-
-		       e.printStackTrace();
+		       er.printStackTrace();
 
 		}
 	}
